@@ -1,0 +1,22 @@
+
+button {
+    display: block;
+    margin: 30px auto;
+}
+
+.square {
+    box-sizing: border-box;
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: 0;
+}
+
+#grid {
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0px;
+    width: 800px;
+    height: 800px;
+}
