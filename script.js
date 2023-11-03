@@ -1,20 +1,30 @@
 
 const gridSizePx = 800; 
-
 const grid = document.querySelector("#grid");
-const input = document.querySelector("button");
+const resize = document.querySelector("#resize");
+const reset = document.querySelector("#reset");
+let gridSize = 16;
 
-input.addEventListener("click", () => {
-    console.log("button clicked");
-    let gridSize = prompt("Enter a grid size between 1 and 100");
+drawGrid(gridSize);
+
+resize.addEventListener("click", () => {
+    gridSize = prompt("Enter a grid size between 1 and 100");
+    if(gridSize > 100){gridSize = 100;}
+    if(gridSize < 1){gridSize = 1;}
     drawGrid(gridSize);
 });
+reset.addEventListener("click", () => {
+    let squares = document.querySelectorAll(".square");
+    for(let square of squares){
+        square.style.backgroundColor = "white";
+    }
+})
 
 function drawGrid(gridSize) {
 
     // Remove existing squares
-    oldSquares = document.querySelectorAll(".square");
-    for(oldSquare of oldSquares){
+    let oldSquares = document.querySelectorAll(".square");
+    for(let oldSquare of oldSquares){
         grid.removeChild(oldSquare);
     }
 
