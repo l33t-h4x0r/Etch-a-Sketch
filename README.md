@@ -1,2 +1,2 @@
 # Etch-a-Sketch
-Odin Project 
+A simple etch-a-sketch, mouse over the tiles to draw.
